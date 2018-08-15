@@ -1,3 +1,6 @@
 <?php
-    $mysqli = mysqli_connect("localhost", "root", "", "tokobaju1");
+    $string = file_get_contents($_SERVER['DOCUMENT_ROOT']."/config.json");
+    $json = json_decode($string, true);
+    $mysqli = mysqli_connect($json['host'], $json['user'], $json['pass'], $json['database']);
+    unset($string);
 ?>

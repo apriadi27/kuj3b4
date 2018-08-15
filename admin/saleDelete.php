@@ -2,13 +2,12 @@
     include "../config/session.php";
     include "../config/config.php";
 
-    $id = $_POST['id'];
-    $sql = "DELETE FROM sosmed WHERE idSosmed='$id'";
+    $idSale = $_POST['idSale'];
+    $sql = "DELETE FROM sale WHERE idSale='$idSale'";
     if ($query = $mysqli->query($sql)) {
         echo "1";
     }
     else{
-        echo "Gagal query sql";
+        echo "Gagal query";
     }
-
 ?>
