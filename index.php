@@ -59,7 +59,7 @@
 
 <div class="header w3-cyan">
 	<button class="menuButton w3-hover-white" onclick="openNav()"><i class="fas fa-bars fa-2x"></i></button>
-	<p class="toko"><i>Nama Toko</i></p>
+	<p class="toko"><i>Toko Kamanda Shop</i></p>
 	<input type="text" name="search" placeholder="Cari produk" class="search">
 
 	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="float: right;"></div> 
@@ -84,48 +84,34 @@
 
 <div class="isi">
 <?php
-	$sql = "SELECT "
+	$sql = "SELECT ";
 ?>
 	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 55px 50px 0;">
-		<img src="picture/sample.jpg" alt="Norway" style="width: 200px">
+		<img src="picture/jilbab1.jpg" alt="Norway" style="width: 200px">
 		<div style="padding: 10px;">
-		    <b>Pedofil</b><br>
-		    Rp 1.000,-
+		    <b>Hijab Instan Khimar Simpel Pet</b><br>
+		    15000
 		</div>
 	</div>
 	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 55px 50px 0;">
-		<img src="picture/sample.jpg" alt="Norway" style="width: 200px">
+		<img src="picture/jilbab2.jpg" alt="Norway" style="width: 200px">
 		<div style="padding: 10px;">
-		    <b>Pedofil</b><br>
-		    Rp 1.000,-
+		    <b>jilbab2Ciput DE'CANTIQU - Ankem/Antem/Inner - Rose</b><br>
+		    25000
 		</div>
 	</div>
 	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 55px 50px 0;">
-		<img src="picture/sample.jpg" alt="Norway" style="width: 200px">
+		<img src="picture/jilbab3.jpg" alt="Norway" style="width: 200px">
 		<div style="padding: 10px;">
-		    <b>Pedofil</b><br>
-		    Rp 1.000,-
+		    <b>Jilbab Satin Velvet Segiempat Square Polos</b><br>
+		    20000
 		</div>
 	</div>
 	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 55px 50px 0;">
-		<img src="picture/sample.jpg" alt="Norway" style="width: 200px">
+		<img src="picture/jilbab4.jpg" alt="Norway" style="width: 200px">
 		<div style="padding: 10px;">
-		    <b>Pedofil</b><br>
-		    Rp 1.000,-
-		</div>
-	</div>
-	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 0px 50px 0;">
-		<img src="picture/sample.jpg" alt="Norway" style="width: 200px">
-		<div style="padding: 10px;">
-		    <b>Pedofil</b><br>
-		    Rp 1.000,-
-		</div>
-	</div>
-	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 60px 50px 0;">
-		<img src="picture/sample.jpg" alt="Norway" style="width: 200px">
-		<div style="padding: 10px;">
-		    <b>Pedofil</b><br>
-		    Rp 1.000,-
+		    <b>Hijab / Jilbab Hasya Rempel</b><br>
+		    34000
 		</div>
 	</div>
 </div>
