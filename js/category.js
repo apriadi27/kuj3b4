@@ -27,3 +27,8 @@ function editDashboard(id, name){
     document.getElementById('editId').value = id;
     document.getElementById('editName').value = name;
 }
+
+function addCategory() {
+    document.getElementById('categoryAdd').style.display='none';
+    document.getElementById('addCategoryName').autofocus;
+}

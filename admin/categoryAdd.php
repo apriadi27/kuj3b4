@@ -1,7 +1,7 @@
 <?php
-    //include "../config/session.php";
+    include "../config/session.php";
     include "../config/config.php";
-    if (isset($_POST['submit'])) {
+    if (isset($_POST['addSubmit'])) {
         $sql = "INSERT INTO category (name) VALUES(?)";
         $stmt = $mysqli->prepare($sql);
         if ($stmt) {
@@ -18,7 +18,7 @@
         }
     }
     else{
-        header("Location: categoryAddDashboard.php");
+        header("Location: category.php");
     }
     $stmt->close();
     $mysqli->close();

@@ -1,11 +1,16 @@
 <?php
+    include "../config/session.php";
+    include "../config/config.php";
     $string = file_get_contents('../config.json');
 	$json = json_decode($string, true);
 	if ($json['new'] == 1) {
 		header("Location: ../init.php");
-	}
-    //include "../config/session.php";
-    include "../config/config.php";
+    }
+    if (isset($_GET['logout'])) {
+        if ($_GET['logout']) {
+            header("Location: ../index.php");
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,6 +22,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../style/w3.css">
     <link rel="stylesheet" type="text/css" href="../style/css.css">
+    <link rel="stylesheet" type="text/css" href="../style/all.css">
+    <script src="../js/all.js"></script>
+    <script>
+		function openNav(){
+			document.getElementById('sidenav').style.display="block";
+		}
+		function closeNav(){
+			document.getElementById('sidenav').style.display="none";
+		}
+    </script>
 </head>
 <body>
 <?php

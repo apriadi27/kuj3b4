@@ -1,5 +1,5 @@
 <?php
-    //include "../config/session.php";
+    include "../config/session.php";
     include "../config/config.php";
     if (isset($_POST['editSubmit'])) {
         $sql = "UPDATE category SET name=? WHERE idCategory=?";

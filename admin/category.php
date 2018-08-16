@@ -1,5 +1,5 @@
 <?php
-    //include "../config/session.php";
+    include "../config/session.php";
     include "../config/config.php";
 ?>
 <!DOCTYPE html>
@@ -19,6 +19,16 @@
             height: 50px;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="../style/all.css">
+    <script src="../js/all.js"></script>
+    <script>
+		function openNav(){
+			document.getElementById('sidenav').style.display="block";
+		}
+		function closeNav(){
+			document.getElementById('sidenav').style.display="none";
+		}
+    </script>
 </head>
 <body>
 <?php
@@ -27,25 +37,25 @@
 
     <div class="w3-modal" style="display: none;" id="categoryAdd">
         <form action="categoryAdd.php" method="post" style="margin: 100px 500px; background-color: white; padding: 30px;">
-            <button class="cancel w3-btn w3-red" onclick="document.getElementById('categoryAdd').style.display='none'">X</button>
-            <center><input type="text" name="name" required class="search" placeholder="Masukkan Kategori" style="margin-right: 0px;" autofocus><br>
-            <input type="submit" value="Submit" name="submit" onclick="document.getElementById('categoryAdd').style.display='none'" class="w3-btn w3-red" style="margin-top: 20px;"></center>
+            <button class="cancel w3-btn w3-cyan" onclick="document.getElementById('categoryAdd').style.display='none'">X</button>
+            <center><input type="text" id="addCategoryName" name="name" requiblue class="search" placeholder="Masukkan Kategori" style="margin-right: 0px;"><br>
+            <input type="submit" value="Submit" name="addSubmit" onclick="addCategory()" class="w3-btn w3-cyan" style="margin-top: 20px;"></center>
         </form>
     </div>
 
     <div class="w3-modal" style="display: none;" id="categoryEdit">
         <form action="categoryEdit.php" method="post" style="margin: 100px 500px; background-color: white; padding: 30px;">
-            <button class="cancel w3-btn w3-red" onclick="document.getElementById('categoryAdd').style.display='none'">X</button>
-            <center><input type="text" name="editName" id="editName" required class="search" placeholder="Ubah Kategori" style="margin-right: 0px;" autofocus><br>
-            <input type="submit" value="Submit" name="editSubmit" onclick="document.getElementById('categoryEdit').style.display='none'" class="w3-btn w3-red" style="margin-top: 20px;"></center>
+            <button class="cancel w3-btn w3-cyan" onclick="document.getElementById('categoryAdd').style.display='none'">X</button>
+            <center><input type="text" name="editName" id="editName" requiblue class="search" placeholder="Ubah Kategori" style="margin-right: 0px;"><br>
+            <input type="submit" value="Submit" name="editSubmit" onclick="document.getElementById('categoryEdit').style.display='none'" class="w3-btn w3-cyan" style="margin-top: 20px;"></center>
             <input type="hidden" name="editId" id="editId">
         </form>
     </div>
 
     <div class="isi" style="margin: 0 200px;">
-        <button class="w3-btn w3-red" style="margin-bottom: 20px;" onclick="document.getElementById('categoryAdd').style.display='block'">Tambah Kategori</button>
+        <button class="w3-btn w3-cyan" style="margin-bottom: 20px;" onclick="document.getElementById('categoryAdd').style.display='block'">Tambah Kategori</button>
         <table class="w3-table w3-hoverable w3-striped">
-            <tr class="w3-red">
+            <tr class="w3-cyan">
                 <th>Kategori</th>
                 <th colspan="2"><center>Option</center></th>
             </tr>
