@@ -3,9 +3,11 @@
 	height: 100px;
 }
 .toko{
-	margin: 10px 50px;
+	margin: 3px 50px;
 	float: left;
 	color: white;
+	font-family: Monotype Corsiva;
+	font-size: 25px;
 }
 .menuButton{
 	text-decoration: none;
@@ -31,7 +33,7 @@
 	margin: -5px 30px 0 0;
 	border: none;
 	padding: 5px 15px;
-	width: 68%;
+	width: 60%;
 	height: 50px;
 }
 #sidenav a{
@@ -52,4 +54,8 @@
 	font-size: 20px;
 	float: right;
 	margin: -30px;
+}
+.produk{
+	width: 200px;
+	height: 200px;
 }

@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Toko Baju 2</title>
+	<title>Toko Kamanda Shop</title>
 	<meta name="google-signin-scope" content="profile email"> 
     <meta name="google-signin-client_id" content="571963356124-9nhkogpvo06cmqjnav3qh8cv3848n6na.apps.googleusercontent.com"> 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -59,7 +59,7 @@
 
 <div class="header w3-cyan">
 	<button class="menuButton w3-hover-white" onclick="openNav()"><i class="fas fa-bars fa-2x"></i></button>
-	<p class="toko"><i>Nama Toko</i></p>
+	<p class="toko">Toko Kamanda Shop</p>
 	<input type="text" name="search" placeholder="Cari produk" class="search">
 
 	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="float: right;"></div> 
@@ -86,48 +86,41 @@
 <?php
 	$sql = "SELECT "
 ?>
-	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 55px 50px 0;">
-		<img src="picture/sample.jpg" alt="Norway" style="width: 200px">
-		<div style="padding: 10px;">
-		    <b>Pedofil</b><br>
-		    Rp 1.000,-
-		</div>
-	</div>
-	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 55px 50px 0;">
-		<img src="picture/sample.jpg" alt="Norway" style="width: 200px">
-		<div style="padding: 10px;">
-		    <b>Pedofil</b><br>
-		    Rp 1.000,-
-		</div>
-	</div>
-	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 55px 50px 0;">
-		<img src="picture/sample.jpg" alt="Norway" style="width: 200px">
-		<div style="padding: 10px;">
-		    <b>Pedofil</b><br>
-		    Rp 1.000,-
-		</div>
-	</div>
-	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 55px 50px 0;">
-		<img src="picture/sample.jpg" alt="Norway" style="width: 200px">
-		<div style="padding: 10px;">
-		    <b>Pedofil</b><br>
-		    Rp 1.000,-
-		</div>
-	</div>
-	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 0px 50px 0;">
-		<img src="picture/sample.jpg" alt="Norway" style="width: 200px">
-		<div style="padding: 10px;">
-		    <b>Pedofil</b><br>
-		    Rp 1.000,-
-		</div>
-	</div>
-	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 60px 50px 0;">
-		<img src="picture/sample.jpg" alt="Norway" style="width: 200px">
-		<div style="padding: 10px;">
-		    <b>Pedofil</b><br>
-		    Rp 1.000,-
-		</div>
-	</div>
+	<div class="w3-card-4" style="width: 200px; float: left; margin-right: 40px">
+        <img src="picture/jilbab instan meyka (39).png" class="produk"><br>
+        <div style="padding: 10px 20px;">
+            <div style="margin: 0 0 0px"><b>Jilbab Instan Meyka</b></div><br>
+            <p style="margin-top: -20px;">39000</p>
+        </div>
+    </div>
+    <div class="w3-card-4" style="width: 200px; float: left; margin-right: 40px">
+        <img src="picture/jilbab instan salwa (16k).jfif" class="produk"><br>
+        <div style="padding: 10px 20px;">
+            <div style="margin: 0 0 20px"><b>Jilbab Instan Salwa</b></div><br>
+            <p style="margin-top: -20px;">16000</p>
+        </div>
+    </div>
+    <div class="w3-card-4" style="width: 200px; float: left; margin-right: 40px">
+        <img src="picture/jilbab isaura kancing (18).jfif" class="produk"><br>
+        <div style="padding: 10px 20px;">
+            <div style="margin-top: 0px"><b>Jilbab Isaura Kancing</b></div><br>
+            <p style="margin-top: -20px;">18000</p>
+        </div>
+    </div>
+    <div class="w3-card-4" style="width: 200px; float: left; margin-right: 40px">
+        <img src="picture/jilbab segiempat (24).png" class="produk"><br>
+        <div style="padding: 10px 20px;">
+            <div style="margin: 0 0 20px"><b>Jilbab Segiempat</b></div><br>
+            <p style="margin-top: -20px;">24000</p>
+        </div>
+    </div>
+	<div class="w3-card-4" style="width: 200px; float: left; margin-right: 40px">
+        <img src="picture/jilbab serut (12k).jfif" class="produk"><br>
+        <div style="padding: 10px 20px;">
+            <div style="margin: 0 0 20px"><b>Jilbab Serut</b></div><br>
+            <p style="margin-top: -20px;">12000</p>
+        </div>
+    </div>
 </div>
 </body>
 </html>
