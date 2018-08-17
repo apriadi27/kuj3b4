@@ -5,14 +5,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin - Kategori</title>
-    <script src="../js/ajax.js"></script>
+<?php include "head.php" ?>
     <script src="../js/category.js"></script>
-    <link rel="stylesheet" type="text/css" href="../style/w3.css">
-    <link rel="stylesheet" type="text/css" href="../style/css.css">
     <style>
         .icon{
             width: 50px;

@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="style/all.css">
 <script src="js/ajax.js"></script>
 <script src="js/all.js"></script>
+<script src="js/user.js"></script>
 <script>
 	function openNav(){
 		document.getElementById('sidenav').style.display="block";

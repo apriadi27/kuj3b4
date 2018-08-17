@@ -98,10 +98,8 @@ function getCost(idCity){
     request.onreadystatechange = function() {
         if (request.status == 200 && request.readyState == 4) {
             var respon = request.responseText;
-            console.log(respon);
             
             var json = JSON.parse(respon);
-            console.log(json);
             
             var results = json['rajaongkir']['results'][0]['costs'];
             var service = document.getElementById('service')
@@ -112,6 +110,8 @@ function getCost(idCity){
                 option.value = results[i]['service'] + " Rp " +  results[i]['cost'][0]['value'];
                 service.add(option);
             }
+            document.getElementById('servicePrice').value = results[0]['cost'][0]['value'];
+            updateCost(results[0]['cost'][0]['value']);
         }
     }
     request.open("POST", "config/getCost.php", true);
@@ -119,18 +119,50 @@ function getCost(idCity){
     request.send(input);
 }
 
+function addOrder() {
+    let service, price, input, idContact, tmp, request, respon, json;
+    service = document.getElementById('service').value;
+    price = document.getElementById('servicePrice').value;
+    idContact = document.getElementById('address').value;
+    totalPrice = document.getElementById('totalPrice').innerHTML;
+    tmp = idContact.split(" ");
+
+    input = "service=" + service + "&price=" + price + "&contact=" + tmp[0];
+    
+    request =  ajax(request);
+    request.onreadystatechange = function() {
+        if (request.status == 200 && request.readyState == 4) {
+            respon = request.responseText;
+            console.log(respon);
+            
+            json = JSON.parse(respon);
+            if (json['status'] == 1) {
+                window.location = "confirmation.php";
+            }
+            else if(json['status'] == 2){
+                alert(json['message']);
+                window.location = "confirmation.php";
+            }
+            else{
+                alert(json['message']);
+            }
+        }
+    }
+    request.open("POST", "addOrder.php", true);
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.send(input);
+}
 function changeDestination() {
     let request, input;
     var city = document.getElementById('address').value;
-
-    input = "idCity=" + city;
+    var tmp = city.split(" ");
+    input = "idCity=" + tmp[1];
 
     request =  ajax(request);
     request.onreadystatechange = function() {
         if (request.status == 200 && request.readyState == 4) {
             var respon = request.responseText;
             var json = JSON.parse(respon);
-            console.log(json);
             
             var results = json['rajaongkir']['results'][0]['costs'];
             var service = document.getElementById('service');
@@ -139,9 +171,12 @@ function changeDestination() {
             for (let i = 0; i < results.length; i++) {
                 option = document.createElement("option");
                 option.text = results[i]['service'] + " Rp " +  results[i]['cost'][0]['value'];
-                option.value = results[i]['service'];
+                option.value = results[i]['service'] + " Rp " +  results[i]['cost'][0]['value'];
                 service.add(option);
             }
+
+            document.getElementById('servicePrice').value = results[0]['cost'][0]['value'];
+            updateCost(results[0]['cost'][0]['value']);
         }
     }
     request.open("POST", "config/getCost.php", true);
@@ -150,5 +185,15 @@ function changeDestination() {
 }
 
 function updateCost(costService) {
+    let hiddenTotalPrice, totalPrice, total;
+    hiddenTotalPrice = document.getElementById('hiddenTotalPrice').value;
+    total = Number(hiddenTotalPrice) + Number(costService);
     
+    document.getElementById('totalPrice').innerHTML = total;
+}
+
+function changeService() {
+    var changeService = document.getElementById('service').value;
+    var tmp = changeService.split(" Rp ");
+    updateCost(tmp[1]);
 }

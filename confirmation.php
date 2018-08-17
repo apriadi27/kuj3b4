@@ -71,15 +71,17 @@
 			$stmt->bind_param("s", $id);
 			if ($stmt->execute()) {
 				$stmt->bind_result($sqlStatus, $sqlIdConfirmation, $sqlBank, $sqlNumberAccount, $sqlAccountOwner);
-				?><table><?php
-				while ($stmt->fetch()) {
-					?>
+				?>
+				<table>
 					<tr>
 						<th>Bank</th>
 						<th>No. Rek</th>
 						<th>Nama Pemilik</th>
 						<th>Status</th>
 					</tr>
+				<?php
+				while ($stmt->fetch()) {
+					?>
 					<tr>
 						<td><?php echo $sqlBank; ?></td>
 						<td><?php echo $sqlNumberAccount; ?></td>
@@ -103,29 +105,6 @@
 		else{
 			echo $mysqli->error;
 		}
-		$stmt->close();
-	}
-	else{
-		echo $stmt->error;
-	}
-
-	if ($confirmationRows > 0) {
-?>
-		<table class="w3-table w3-striped">
-			<tr class="w3-blue">
-				<th>Bank</th>
-				<th>No. Rek</th>
-				<th>Nama Pemilik</th>
-				<th>Status</th>
-			</tr>
-			<tr>
-				<td><?php echo $bank; ?></td>
-				<td><?php echo $numberAccount; ?></td>
-				<td><?php echo $accountOwner; ?></td>
-				<td><?php echo $status; ?></td>
-			</tr>
-		</table>
-<?php
 	}
 	else{
 ?>

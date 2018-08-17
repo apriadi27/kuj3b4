@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
 <?php include "head.php"; ?>
+<script src="js/user.js"></script>
 </head>
 <script>
     window.onload = function(){

@@ -12,7 +12,7 @@
         $sql = "INSERT INTO contact(idAccount, idCity, idProvince, postalCode, Address)
                 VALUES('$id', '$city', '$province', '$postal', '$address')";
         if ($query = $mysqli->query($sql)) {
-            header("kontak.php");
+            header("Location : kontak.php");
         }
         else{
             echo "query failed". $mysqli->error;
