@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Toko Baju 1 - Admin</title>
+	<title>Toko Kamanda Shop - Admin</title>
 	<meta name="google-signin-scope" content="profile email"> 
     <meta name="google-signin-client_id" content="571963356124-9nhkogpvo06cmqjnav3qh8cv3848n6na.apps.googleusercontent.com"> 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -45,20 +45,20 @@ var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ["Topi Bonet Bayi", "Topi Pilot", "Bajut Setelan Army", "Jumper Nanas"],
+        labels: ["Hijab Instan Khimar Simpel Pet", "Ciput DE'CANTIQU - Ankem/Antem/Inner - Rose", "Jilbab Satin Velvet Segiempat Square Polos", "Hijab / Jilbab Hasya Rempel"],
         datasets: [{
             label: 'Penjualan Item',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [10, 2, 7, 5],
             backgroundColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
+                'rgba(22, 99, 132, 1)',
+                'rgba(54, 12, 235, 1)',
+                'rgba(215, 20, 86, 1)',
                 'rgba(75, 192, 192, 1)'
             ],
             borderColor: [
-                'rgba(255,99,132,1)',
+                'rgba(22, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
+                'rgba(215, 20, 86, 1)',
                 'rgba(75, 192, 192, 1)'
             ],
             borderWidth: 1

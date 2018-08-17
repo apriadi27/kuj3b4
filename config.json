@@ -1,1 +1,7 @@
-{"new":0,"host":"localhost","user":"root","pass":"","database":"tokobaju1"}
+{
+    "new":"0",
+    "host":"localhost",
+    "user":"root",
+    "pass":"",
+    "database":"tokobaju2"
+}
