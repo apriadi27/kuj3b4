@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Toko Baju 2</title>
+	<title>Toko Kamanda Shop</title>
 	<meta name="google-signin-scope" content="profile email"> 
     <meta name="google-signin-client_id" content="571963356124-9nhkogpvo06cmqjnav3qh8cv3848n6na.apps.googleusercontent.com"> 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -32,30 +32,18 @@
 		function kategoriColorCyan(){
 			document.getElementById('kategori').classList.remove('w3-white');
 		}
+		function menuProfilIn(){
+            document.getElementById('menuProfil').classList.add('in');
+            document.getElementById('menuProfil').classList.remove('out');
+        }
+        function menuProfilOut(){
+            document.getElementById('menuProfil').classList.remove('in');
+            document.getElementById('menuProfil').classList.add('out');
+        }
 	</script>
 </head>
 <body>
-
-<nav class="w3-sidenav w3-animate-left w3-cyan w3-card-12" style="display: none; width: 20%;" id="sidenav">
-<a class="w3-hover-white" style="color: white; font-size: 19px; padding-top: 10px; cursor: pointer;" onclick="closeNav()"><b>Close X</b></a>
-<a href="index.php" class="w3-hover-white" style="color: white;"><i class="fas fa-home" style="margin-right: 20px;"></i>Home</a>
-	<div class="w3-dropdown-hover">
-      <a class="w3-hover-white" id="kategori"><i class="fas fa-chart-pie" style="margin-right: 20px;"></i>Kategori</a>
-      <div class="w3-dropdown-content w3-card-4" style="width: 200px; transition: 0.5s;">
-      	<?php
-			$sql = "SELECT * FROM category";
-			$query = $mysqli->query($sql);
-			while ($row = $query->fetch_assoc()) {
-				if($row['idCategory'] != 1){
-		?>		
-				<a href="#" style="width: 100%" class="w3-hover-cyan" onmouseover="kategoriColorWhite()" onmouseout="kategoriColorCyan()"><?php echo ucfirst($row['name']); ?></a>
-		<?php
-				}
-			}
-		?>
-      </div>
-    </div>
-</nav>
+<?php include "header.php"; ?>
 
 <div class="header w3-cyan">
 	<button class="menuButton w3-hover-white" onclick="openNav()"><i class="fas fa-bars fa-2x"></i></button>
@@ -84,36 +72,29 @@
 
 <div class="isi">
 <?php
-	$sql = "SELECT ";
+	$sql = "SELECT product.idProduct, 
+			product.sellingPrice, 
+			dataproduct.name,
+			dataproduct.picture
+			FROM product
+			INNER JOIN dataproduct
+			ON product.idProduct = dataproduct.idProduct";
+	if ($query = $mysqli->query($sql)) {
+		while ($row = $query->fetch_assoc()) {
+			?>
+			<a href="detailProduct.php?idProduct=<?php echo $row['idProduct']; ?>">
+                <div class="w3-card-4" style="width: 200px; float: left; margin: 0 20px 40px">
+                    <img src="productPicture/<?php echo $row['picture']; ?>" alt="Norway" class="produk">
+                    <div style="padding: 10px 20px;">
+                        <div style="margin: 0 0 20px; height: 50px"><b><?php $name = (strlen($row['name']) > 40) ? substr($row['name'],0, 40)."..." : substr($row['name'],0, 40); echo $name; ?></b></div><br>
+                        <p style="margin-top: -20px;"><?php echo $row['sellingPrice']; ?></p>
+                    </div>
+                </div>
+            </a>
+			<?php
+		}
+	}
 ?>
-	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 55px 50px 0;">
-		<img src="picture/jilbab1.jpg" alt="Norway" style="width: 200px">
-		<div style="padding: 10px;">
-		    <b>Hijab Instan Khimar Simpel Pet</b><br>
-		    15000
-		</div>
-	</div>
-	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 55px 50px 0;">
-		<img src="picture/jilbab2.jpg" alt="Norway" style="width: 200px">
-		<div style="padding: 10px;">
-		    <b>jilbab2Ciput DE'CANTIQU - Ankem/Antem/Inner - Rose</b><br>
-		    25000
-		</div>
-	</div>
-	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 55px 50px 0;">
-		<img src="picture/jilbab3.jpg" alt="Norway" style="width: 200px">
-		<div style="padding: 10px;">
-		    <b>Jilbab Satin Velvet Segiempat Square Polos</b><br>
-		    20000
-		</div>
-	</div>
-	<div class="w3-card-12" style="width: 200px; float: left; margin: 0 55px 50px 0;">
-		<img src="picture/jilbab4.jpg" alt="Norway" style="width: 200px">
-		<div style="padding: 10px;">
-		    <b>Hijab / Jilbab Hasya Rempel</b><br>
-		    34000
-		</div>
-	</div>
 </div>
 </body>
 </html>

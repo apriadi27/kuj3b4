@@ -39,7 +39,7 @@
         <button class="cancel w3-btn w3-blue" onclick="document.getElementById('sosmedAdd').style.display='none'">X</button>
         <center><input type="text" name="addUser" requiblue class="search" placeholder="Masukkan Username" style="margin: 0 0 20px;" autofocus><br>
         <input type="password" name="addPass" id="addPass1" requiblue class="search" placeholder="Masukkan Password" style="margin: 0 0 20px;" oninput="confirmAddPass()"><br>
-        <input type="password" id="addPass2" requiblue class="search" placeholder="Konfirmasi Password" style="margin: 0 0 20px;" oninput="confirmAddPass()">
+        <input type="password" id="addPass2" requiblue class="search" placeholder="Konfirmasi Password" style="margin: 0 0 20px;" oninput="confirmAddPass()"><br>
         <label id="labelAddPass"></label>
         <br>
         <select name="addType">
