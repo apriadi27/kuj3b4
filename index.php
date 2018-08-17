@@ -1,76 +1,17 @@
 <?php
 	include "config/config.php";
-	session_start();
-
-	if (isset($_SESSION['status']) && isset($_SESSION['idToken'])) {
-		# code...
-	}
+	include "config/sessionUser.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Toko Kamanda Shop</title>
-	<meta name="google-signin-scope" content="profile email"> 
-    <meta name="google-signin-client_id" content="571963356124-9nhkogpvo06cmqjnav3qh8cv3848n6na.apps.googleusercontent.com"> 
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <link rel="stylesheet" type="text/css" href="style/w3.css">
-	<link rel="stylesheet" type="text/css" href="style/css.css">
-	<link rel="stylesheet" type="text/css" href="style/all.css">
-	<script src="js/ajax.js"></script>
-	<script src="js/login.js"></script>
-	<script src="js/all.js"></script>
-	<script>
-		function openNav(){
-			document.getElementById('sidenav').style.display="block";
-		}
-		function closeNav(){
-			document.getElementById('sidenav').style.display="none";
-		}
-		function kategoriColorWhite(){
-			document.getElementById('kategori').classList.add('w3-white');
-		}
-		function kategoriColorCyan(){
-			document.getElementById('kategori').classList.remove('w3-white');
-		}
-		function menuProfilIn(){
-            document.getElementById('menuProfil').classList.add('in');
-            document.getElementById('menuProfil').classList.remove('out');
-        }
-        function menuProfilOut(){
-            document.getElementById('menuProfil').classList.remove('in');
-            document.getElementById('menuProfil').classList.add('out');
-        }
-	</script>
+	<?php include "head.php"; ?>
 </head>
 <body>
+
 <?php include "header.php"; ?>
 
-<div class="header w3-cyan">
-	<button class="menuButton w3-hover-white" onclick="openNav()"><i class="fas fa-bars fa-2x"></i></button>
-	<p class="toko"><i>Toko Kamanda Shop</i></p>
-	<input type="text" name="search" placeholder="Cari produk" class="search">
-
-	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="float: right;"></div> 
-    <script> 
-      function onSignIn(googleUser) { 
-        // Useful data for your client-side scripts: 
-        var profile = googleUser.getBasicProfile(); 
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server! 
-        console.log('Full Name: ' + profile.getName()); 
-        console.log('Given Name: ' + profile.getGivenName()); 
-        console.log('Family Name: ' + profile.getFamilyName()); 
-        console.log("Image URL: " + profile.getImageUrl()); 
-        console.log("Email: " + profile.getEmail());
-
-        // The ID token you need to pass to your backend: 
-        var id_token = googleUser.getAuthResponse().id_token; 
-        console.log("ID Token: " + id_token); 
-      }; 
-	</script>
-	
-</div>
-
-<div class="isi">
+<div style="margin: 30px -20px 20px 80px;">
 <?php
 	$sql = "SELECT product.idProduct, 
 			product.sellingPrice, 
