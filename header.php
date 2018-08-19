@@ -25,8 +25,6 @@
 <div class="header w3-cyan">
 	<button class="menuButton w3-hover-white" onclick="openNav()"><i class="fas fa-bars fa-2x"></i></button>
 	<p class="toko"><i>Toko Kamanda Shop</i></p>
-	<input type="text" name="search" placeholder="Cari produk" class="search">
-
 	<div id="googleSignIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="float: right;"></div>
 	<img src="<?php echo $_SESSION['picture']; ?>" alt="Profil" class="profil" id="profileGoogle" style="display: none">
     <script> 
