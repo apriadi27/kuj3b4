@@ -21,7 +21,7 @@
 
     <div class="w3-modal" style="display: none;" id="categoryAdd">
         <form action="categoryAdd.php" method="post" style="margin: 100px 500px; background-color: white; padding: 30px;">
-            <button class="cancel w3-btn w3-cyan" onclick="document.getElementById('categoryAdd').style.display='none'">X</button>
+            <div class="cancel w3-btn w3-cyan" onclick="document.getElementById('categoryAdd').style.display='none'">X</div>
             <center><input type="text" id="addCategoryName" name="name" requiblue class="search" placeholder="Masukkan Kategori" style="margin-right: 0px;"><br>
             <input type="submit" value="Submit" name="addSubmit" onclick="addCategory()" class="w3-btn w3-cyan" style="margin-top: 20px;"></center>
         </form>
@@ -29,7 +29,7 @@
 
     <div class="w3-modal" style="display: none;" id="categoryEdit">
         <form action="categoryEdit.php" method="post" style="margin: 100px 500px; background-color: white; padding: 30px;">
-            <button class="cancel w3-btn w3-cyan" onclick="document.getElementById('categoryAdd').style.display='none'">X</button>
+            <div class="cancel w3-btn w3-cyan" onclick="document.getElementById('categoryEdit').style.display='none'">X</div>
             <center><input type="text" name="editName" id="editName" requiblue class="search" placeholder="Ubah Kategori" style="margin-right: 0px;"><br>
             <input type="submit" value="Submit" name="editSubmit" onclick="document.getElementById('categoryEdit').style.display='none'" class="w3-btn w3-cyan" style="margin-top: 20px;"></center>
             <input type="hidden" name="editId" id="editId">

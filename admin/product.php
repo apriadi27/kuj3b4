@@ -18,7 +18,7 @@
 
 <div class="w3-modal" style="display: none;" id="productAdd">
     <form action="productAdd.php" method="post" enctype="multipart/form-data" style="margin: -35px 450px; background-color: white; padding: 30px 0px 30px 60px;">
-        <button class="cancel w3-btn w3-cyan" onclick="document.getElementById('productAdd').style.display='none'" style="margin: -30px 0px">X</button>
+        <div class="cancel w3-btn w3-cyan" onclick="document.getElementById('productAdd').style.display='none'" style="margin: -30px 0px">X</div>
 	    <input type="text" name="name" required class="search" placeholder="Masukkan Nama Produk" style="margin: 0 0 10px 55px;" autofocus><br>
 	    Upload gambar : <input type="file" name="picture" required style="margin: 0 0 10px 0;" accept="image/*"><br>
 	    <input type="text" name="description" required class="search" placeholder="Masukkan Deskripsi Produk" style="margin: 0 0 10px 55px;"><br>
@@ -47,7 +47,7 @@
 
 <div class="w3-modal" style="display: none;" id="productEdit">
     <form action="productEdit.php" method="post" enctype="multipart/form-data" style="margin: -35px 450px; background-color: white; padding: 30px 0px 30px 60px;">
-        <button class="cancel w3-btn w3-cyan" onclick="document.getElementById('productEdit').style.display='none'" style="margin: -30px 0px">X</button>
+        <div class="cancel w3-btn w3-cyan" onclick="document.getElementById('productEdit').style.display='none'" style="margin: -30px 0px">X</div>
         <input type="hidden" name="idProductEdit" id="idProductEdit">
 	    <input type="text" id="nameEdit" name="nameEdit" class="search" placeholder="Masukkan Nama Produk" style="margin: 0 0 10px 55px;" autofocus><br>
         <input type="hidden" name="idProductEdit" id="idProductEdit">

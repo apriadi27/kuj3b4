@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../style/w3.css">
     <link rel="stylesheet" type="text/css" href="../style/css.css">
     <title>Admin - Akun</title>
+    <script src="../js/sosmed.js"></script>
     <?php
         include 'head.php';
     ?>
@@ -25,7 +26,7 @@
 
 <div class="w3-modal" style="display: none;" id="sosmedAdd">
     <form action="sosmedAdd.php" method="post" style="margin: 50px 500px; background-color: white; padding: 30px;">
-        <button class="cancel w3-btn w3-cyan" onclick="document.getElementById('sosmedAdd').style.display='none'">X</button>
+        <div class="cancel w3-btn w3-cyan" onclick="document.getElementById('sosmedAdd').style.display='none'">X</div>
         <center><input type="text" name="addUser" requiblue class="search" placeholder="Masukkan Username" style="margin: 0 0 20px;" autofocus><br>
         <input type="password" name="addPass" id="addPass1" requiblue class="search" placeholder="Masukkan Password" style="margin: 0 0 20px;" oninput="confirmAddPass()"><br>
         <input type="password" id="addPass2" requiblue class="search" placeholder="Konfirmasi Password" style="margin: 0 0 20px;" oninput="confirmAddPass()">
@@ -42,7 +43,7 @@
 
 <div class="w3-modal" style="display: none;" id="sosmedEdit">
     <form action="sosmedEdit.php" method="post" style="margin: 50px 500px; background-color: white; padding: 30px;">
-        <button class="cancel w3-btn w3-cyan" onclick="document.getElementById('sosmedEdit').style.display='none'">X</button>
+        <div class="cancel w3-btn w3-cyan" onclick="document.getElementById('sosmedEdit').style.display='none'">X</div>
         <center><label id="labelEditUser"></label><br>
         <input type="hidden" name="editIdSosmed" id="editIdSosmed">
         <input type="password" id="editOldPass" requiblue class="search" placeholder="Masukkan Password Lama" style="margin: 0 0 20px;" onchange="checkPass()">

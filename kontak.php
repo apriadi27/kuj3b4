@@ -19,7 +19,7 @@
 
     <div class="w3-modal" style="display: none;" id="contactAdd">
         <form action="contactAdd.php" method="post" style="margin: 30px 500px; background-color: white; padding: 30px;">
-            <button class="cancel w3-btn w3-blue" onclick="document.getElementById('contactAdd').style.display='none'">X</button>
+            <div class="cancel w3-btn w3-blue" onclick="document.getElementById('contactAdd').style.display='none'">X</div>
             <center><textarea type="text" name="addAddress" required class="search" placeholder="Masukkan Alamat" style="margin: 0 0 20px;"></textarea><br>
             <select name="addProvince" id="addProvince" onchange="addChangeProvince()" style="margin-bottom: 20px;"></select><br>
             <select name="addCity" id="addCity" style="margin-bottom: 20px;"></select><br>
@@ -30,7 +30,7 @@
 
     <div class="w3-modal" style="display: none;" id="contactEdit">
         <form action="contactEdit.php" method="post" style="margin: 30px 500px; background-color: white; padding: 30px;">
-            <button class="cancel w3-btn w3-blue" onclick="document.getElementById('contactEdit').style.display='none'">X</button>
+            <div class="cancel w3-btn w3-blue" onclick="document.getElementById('contactEdit').style.display='none'">X</div>
             <input type="hidden" name="editIdContact" id="editIdContact">
             <center><textarea type="text" id="editAddress" name="editAddress" required class="search" placeholder="Masukkan Alamat" style="margin: 0 0 20px;"></textarea><br>
             <select name="editProvince" id="editProvince" onchange="editChangeProvince()" style="margin-bottom: 20px;"></select><br>
