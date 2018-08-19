@@ -58,7 +58,7 @@
             $stmt->bind_result($idProduct, $sellingPrice, $name, $picture, $total, $message);
             ?>
             <table class="w3-table w3-bordered w3-striped" style="margin: 0 100px 40px 0; width: 500px; float: left">
-                <tr class="w3-blue">
+                <tr class="w3-cyan">
                     <td>Produk yang Dipesan</td>
                 </tr>
             <?php

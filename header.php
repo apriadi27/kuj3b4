@@ -1,10 +1,6 @@
 <nav class="w3-sidenav w3-animate-left w3-cyan w3-card-12" style="display: none; width: 20%;" id="sidenav">
 <a class="w3-hover-white" style="color: white; font-size: 19px; padding-top: 10px; cursor: pointer;" onclick="closeNav()"><b>Close X</b></a>
 <a href="index.php" class="w3-hover-white" style="color: white;"><i class="fas fa-home" style="margin-right: 20px;"></i>Home</a>
-<a class="w3-hover-white" href="keranjang.php"><i class="fas fa-chart-pie" style="margin-right: 20px;"></i>Keranjang</a>
-<a class="w3-hover-white" href="confirmation.php"><i class="fas fa-chart-pie" style="margin-right: 20px;"></i>Konfirmasi Pesanan</a>
-<a class="w3-hover-white" href="kontak.php"><i class="fas fa-chart-pie" style="margin-right: 20px;"></i>Pengaturan Kontak</a>
-<a href="#" onclick="signOut();"><i class="fas fa-chart-pie" style="margin-right: 20px;"></i>Log Out</a>
 	<div class="w3-dropdown-hover">
       	<a class="w3-hover-white" id="kategori"><i class="fas fa-chart-pie" style="margin-right: 20px;"></i>Kategori</a>
       <div class="w3-dropdown-content w3-card-4" style="width: 200px; transition: 0.5s;">
@@ -22,11 +18,18 @@
       </div>
     </div>
 </nav>
+
 <div class="header w3-cyan">
 	<button class="menuButton w3-hover-white" onclick="openNav()"><i class="fas fa-bars fa-2x"></i></button>
 	<p class="toko"><i>Toko Kamanda Shop</i></p>
 	<div id="googleSignIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="float: right;"></div>
-	<img src="<?php echo $_SESSION['picture']; ?>" alt="Profil" class="profil" id="profileGoogle" style="display: none">
+	<img src="<?php echo $_SESSION['picture']; ?>" alt="Profil" class="profil" id="profileGoogle" style="display: none" onmouseover="menuProfilIn()" onmouseout="menuProfilOut()">
+	<div class="menuProfil w3-card-4 out" id="menuProfil" onmouseover="menuProfilIn()" onmouseout="menuProfilOut()">
+		<a class="w3-hover-white" href="keranjang.php"><button>Keranjang</button></a><br>
+		<a class="w3-hover-white" href="confirmation.php"><button>Konfirmasi Pesanan</button></a><br>
+		<a class="w3-hover-white" href="kontak.php"><button>Pengaturan Kontak</button></a><br>
+		<a href="#" onclick="signOut();"><button>Log Out</button></a>
+	</div>
     <script> 
     function onSignIn(googleUser) {
     	var idGoogle;
