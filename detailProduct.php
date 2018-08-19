@@ -14,7 +14,7 @@
     ?> 
 </head>
 <body>
-<?php include "header.php"; include 'menu.php'; ?>
+<?php include "header.php"; ?>
 <div class="isi">
 <?php
     $tmpName;

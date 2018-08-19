@@ -20,7 +20,6 @@
 
 <?php
   include 'header.php';
-  include 'menu.php';
 ?>
 
     <div class="w3-modal" style="display: none;" id="contactAdd">

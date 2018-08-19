@@ -35,8 +35,7 @@
     else{
         $mysqli->error;
     }
-    include "header.php"; 
-    include 'menu.php';
+    include "header.php";
 ?>
 
 <div class="isi" style="padding-left: 170px">

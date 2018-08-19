@@ -17,7 +17,6 @@
 
 <?php
   include 'header.php';
-  include 'menu.php';
 ?>
 
 <div class="isi">

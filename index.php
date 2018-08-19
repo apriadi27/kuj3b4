@@ -16,8 +16,7 @@
 <body>
 
 <?php 
-    include "header.php"; 
-    include 'menu.php';
+    include "header.php";
 ?>
 
 <div style="margin: 30px -20px 20px 80px;">
