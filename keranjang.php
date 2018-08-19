@@ -16,8 +16,6 @@
 <body>
 
 <?php 
-    include "header.php"; 
-    include 'menu.php';
 
     $id = $_SESSION['id'];
     $sql = "SELECT idContact FROM contact WHERE idAccount=?";
@@ -37,6 +35,8 @@
     else{
         $mysqli->error;
     }
+    include "header.php"; 
+    include 'menu.php';
 ?>
 
 <div class="isi" style="padding-left: 170px">
@@ -66,7 +66,7 @@
             $stmt->bind_result($idProduct, $sellingPrice, $name, $picture, $total, $message);
             ?>
             <table class="w3-table w3-bordered w3-striped" style="margin: 0 100px 40px 0; width: 500px; float: left">
-                <tr class="w3-cyan">
+                <tr class="w3-blue">
                     <td>Produk yang Dipesan</td>
                 </tr>
             <?php

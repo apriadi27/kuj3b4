@@ -1,10 +1,6 @@
 <?php
+	include "config/sessionUser.php";
 	include "config/config.php";
-	session_start();
-
-	if (isset($_SESSION['status']) && isset($_SESSION['idToken'])) {
-		# code...
-	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +28,8 @@
 			dataproduct.picture
 			FROM product
 			INNER JOIN dataproduct
-			ON product.idProduct = dataproduct.idProduct";
+            ON product.idProduct = dataproduct.idProduct
+            WHERE product.stock > 0";
 	if ($query = $mysqli->query($sql)) {
 		while ($row = $query->fetch_assoc()) {
 			?>
