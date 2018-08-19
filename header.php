@@ -71,7 +71,6 @@
         });
         window.location = 'index.php';
     }
-	</script>
-</div>
-<div class="menuProfil w3-card-4 out" id="menuProfil" onmouseover="menuProfilIn()" onmouseout="menuProfilOut()">
+</script>
+	
 </div>

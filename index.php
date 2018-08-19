@@ -19,7 +19,8 @@
 			dataproduct.picture
 			FROM product
 			INNER JOIN dataproduct
-			ON product.idProduct = dataproduct.idProduct";
+            ON product.idProduct = dataproduct.idProduct
+            WHERE product.stock > 0";
 	if ($query = $mysqli->query($sql)) {
 		while ($row = $query->fetch_assoc()) {
 			?>
