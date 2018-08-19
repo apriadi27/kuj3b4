@@ -27,24 +27,51 @@
 	<p class="toko"><i>Toko Kamanda Shop</i></p>
 	<input type="text" name="search" placeholder="Cari produk" class="search">
 
-	<div id="googleSignIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="float: right;"></div> 
+	<div id="googleSignIn" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="float: right;"></div>
+	<img src="<?php echo $_SESSION['picture']; ?>" alt="Profil" class="profil" id="profileGoogle" style="display: none">
     <script> 
-      function onSignIn(googleUser) { 
-        // Useful data for your client-side scripts: 
-        var profile = googleUser.getBasicProfile(); 
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server! 
-        console.log('Full Name: ' + profile.getName()); 
-        console.log('Given Name: ' + profile.getGivenName()); 
-        console.log('Family Name: ' + profile.getFamilyName()); 
-        console.log("Image URL: " + profile.getImageUrl()); 
-        console.log("Email: " + profile.getEmail());
-
-        // The ID token you need to pass to your backend: 
-        var id_token = googleUser.getAuthResponse().id_token; 
-        console.log("ID Token: " + id_token); 
-      }; 
+    function onSignIn(googleUser) {
+    	var idGoogle;
+    	var profile = googleUser.getBasicProfile(); 
+    	idGoogle = profile.getEmail(); 
+    	var picture = profile.getImageUrl();
+    	document.getElementById("googleSignIn").style.display = "none";
+    	// The ID token you need to pass to your backend: 
+    	sendBack(idGoogle, picture);
+    };
+    function sendBack(idGoogle, picture){
+        var input = "idGoogle=" + idGoogle + "&picture=" + picture;
+        var request =  ajax(request);
+        request.onreadystatechange = function() {
+            if (request.status == 200 && request.readyState == 4) {
+               var respon = request.responseText;
+                    
+                var json = JSON.parse(respon);
+                if(json.status == 1){
+                    window.location = "https://stromzivota.web.id/admin/index.php";
+                }
+				else if(json.status == 0){
+					document.getElementById('googleSignIn').style.display = "none";
+					document.getElementById('profileGoogle').style.display = "block";
+					document.getElementById('profileGoogle').src = picture;
+				}
+                else{
+                    console.log(json.message);
+                }
+            }
+        };
+        request.open("POST", "config/checkGoogle.php", true);
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.send(input);
+    };
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+            console.log('User signed out.');
+        });
+        window.location = 'index.php';
+    }
 	</script>
-	<img src="" alt="Profil" id="profileGoogle" style="display: none">
 </div>
 <div class="menuProfil w3-card-4 out" id="menuProfil" onmouseover="menuProfilIn()" onmouseout="menuProfilOut()">
 </div>

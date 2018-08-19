@@ -49,7 +49,8 @@
     <form action="productEdit.php" method="post" enctype="multipart/form-data" style="margin: -35px 450px; background-color: white; padding: 30px 0px 30px 60px;">
         <button class="cancel w3-btn w3-cyan" onclick="document.getElementById('productEdit').style.display='none'" style="margin: -30px 0px">X</button>
         <input type="hidden" name="idProductEdit" id="idProductEdit">
-	    <input type="text" id="nameEdit" name="nameEdit" required class="search" placeholder="Masukkan Nama Produk" style="margin: 0 0 10px 55px;" autofocus><br>
+	    <input type="text" id="nameEdit" name="nameEdit" class="search" placeholder="Masukkan Nama Produk" style="margin: 0 0 10px 55px;" autofocus><br>
+        <input type="hidden" name="idProductEdit" id="idProductEdit">
         <center><img id="showPictureEdit" src="" alt="" srcset=""></center><br>
 	    Upload gambar : <input id="pictureEdit" type="file" name="pictureEdit" style="margin: 0 0 10px 0;" accept="image/*"><br>
 	    <input type="text" id="descriptionEdit" name="descriptionEdit" required class="search" placeholder="Masukkan Deskripsi Produk" style="margin: 0 0 10px 55px;"><br>

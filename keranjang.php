@@ -10,9 +10,6 @@
 <body>
 
 <?php 
-    include "header.php"; 
-    include 'menu.php';
-
     $id = $_SESSION['id'];
     $sql = "SELECT idContact FROM contact WHERE idAccount=?";
     if ($stmt = $mysqli->prepare($sql)) {
@@ -31,6 +28,7 @@
     else{
         $mysqli->error;
     }
+    include "header.php";
 ?>
 
 <div class="isi" style="padding-left: 170px">

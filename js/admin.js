@@ -2,7 +2,6 @@ function adminCharts(canvas, data, title) {
     let json, ctx, charts;
     
     json = JSON.parse(data);
-    console.log(json);
     
     charts = {
         type: 'horizontalBar',
@@ -38,7 +37,6 @@ function adminCharts(canvas, data, title) {
     charts['data']['datasets'][0]['data'] = json['data'];
     charts['data']['datasets'][0]['backgroundColor'] = json['bgColor'];
     charts['data']['datasets'][0]['borderColor'] = json['bgColor'];
-    console.log(charts);
 
     ctx = document.getElementById(canvas).getContext('2d');
     var myChart = new Chart(ctx, charts);

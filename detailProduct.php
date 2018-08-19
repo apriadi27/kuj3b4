@@ -6,20 +6,9 @@
 <html lang="en">
 <head>
 <?php include "head.php"; ?>
-    <script src="js/user.js"></script>
-    <script>
-    function menuProfilIn(){
-            document.getElementById('menuProfil').classList.add('in');
-            document.getElementById('menuProfil').classList.remove('out');
-        }
-        function menuProfilOut(){
-            document.getElementById('menuProfil').classList.remove('in');
-            document.getElementById('menuProfil').classList.add('out');
-        }
-    </script>
 </head>
 <body>
-<?php include "header.php"; include 'menu.php'; ?>
+<?php include "header.php";?>
 <div class="isi">
 <?php
     $tmpName;

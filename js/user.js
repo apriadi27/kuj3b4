@@ -29,40 +29,25 @@ function submitTrolli() {
     request.send(input);
 }
 
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-        console.log('User signed out.');
-    });
-}
-
-function getProvince() {
+function getProvince(callback) {
     let request;
     request =  ajax(request);
-    
     request.onreadystatechange = function() {
         if (request.status == 200 && request.readyState == 4) {
             var respon = request.responseText;
+            
             var json = JSON.parse(respon);
             var results = json['rajaongkir']['results'];
 
-            var province = document.getElementById('addProvince');
-            var option;
-            for (let i = 0; i < results.length; i++) {
-                option = document.createElement("option");
-                option.text = results[i]['province'];
-                option.value = results[i]['province_id'];
-                province.add(option);
-            }
+            callback(results);
         }
     }
-    request.open("GET", "config/getProvince.php", true);
+    request.open("POST", "config/getProvince.php", true);
     request.send();
 }
 
-function getCity(){
-    let request, input, idProvince;
-    idProvince = document.getElementById('addProvince').value;
+function getCity(forms, idProvince, idCity){
+    let request, input;
 
     input = "idProvince=" + idProvince;
 
@@ -74,7 +59,7 @@ function getCity(){
             
             var results = json['rajaongkir']['results'];
 
-            var city = document.getElementById('addCity');
+            var city = document.getElementById(forms+'City');
             city.innerHTML = "";
             var option;
             for (let i = 0; i < results.length; i++) {
@@ -83,6 +68,7 @@ function getCity(){
                 option.value = results[i]['city_id'];
                 city.add(option);
             }
+            city.value = idCity;
         }
     }
     request.open("POST", "config/getCity.php", true);
@@ -201,6 +187,70 @@ function changeService() {
 }
 
 function addContactForm() {
+    let results;
     document.getElementById('contactAdd').style.display='block';
-    getProvince();
+    getProvince(function (respon) {
+        results = respon;
+        var province = document.getElementById('addProvince');
+        var option;
+        for (let i = 0; i < results.length; i++) {
+            option = document.createElement("option");
+            option.text = results[i]['province'];
+            option.value = results[i]['province_id'];
+            province.add(option);
+        }
+        getCity('add', document.getElementById('addProvince').value);
+    });
+}
+
+function editContactForm(idContact, address, idCity, idProvince, postalCode) {
+    let results;
+    document.getElementById('contactEdit').style.display='block';
+    document.getElementById('editAddress').value = address;
+    document.getElementById('editPostalCode').value = postalCode;
+    document.getElementById('editIdContact').value = idContact;
+    getProvince(function (respon) {
+        results = respon;
+        var province = document.getElementById('editProvince');
+        var option;
+        for (let i = 0; i < results.length; i++) {
+            option = document.createElement("option");
+            option.text = results[i]['province'];
+            option.value = results[i]['province_id'];
+            province.add(option);
+        }
+        document.getElementById('editProvince').value = idProvince;
+        getCity('edit', idProvince, idCity);
+    });
+    
+}
+function addChangeProvince() {
+    getCity('add', document.getElementById('addProvince').value);
+}
+function editChangeProvince() {
+    getCity('edit', document.getElementById('editProvince').value);
+}
+
+function contactDelete(id, address) {
+    let ask, request, input;
+    ask = confirm("Apakah anda yakin menghapus " + address);
+    if (ask) {
+        input = 'id=' + id;
+        request =  ajax(request);
+        request.onreadystatechange = function() {
+            if (request.status == 200 && request.readyState == 4) {
+                console.log(request.responseText);
+                
+                if (request.responseText == 1) {
+                    window.location = "kontak.php";
+                }
+                else{
+                    alert("Failed to delete");
+                }
+            }
+        }
+        request.open("POST", "contactDelete.php", true);
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.send(input);
+    }
 }

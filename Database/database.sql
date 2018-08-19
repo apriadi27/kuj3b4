@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 19, 2018 at 08:42 AM
+-- Generation Time: Aug 19, 2018 at 11:02 AM
 -- Server version: 10.3.8-MariaDB-log
 -- PHP Version: 7.2.8
 
@@ -40,7 +40,7 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`idEmail`, `picture`, `status`, `phoneNumber`) VALUES
-('willychai04@gmail.com', 'jefiwjife', 0, NULL);
+('willychai05@gmail.com', 'https://lh4.googleusercontent.com/-l7bVjUiIt80/AAAAAAAAAAI/AAAAAAAAAAA/APUIFaPZ3QHivTvNzdsJCEg9e6TzXJntKA/s96-c/photo.jpg', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -118,7 +118,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`idContact`, `idAccount`, `idCity`, `idProvince`, `postalCode`, `Address`) VALUES
-(7, 'willychai04@gmail.com', 442, 8, 123, 'Jl. Ayani');
+(8, 'willychai05@gmail.com', 37, 10, 123, 'Jl. Merdekaa');
 
 -- --------------------------------------------------------
 
@@ -420,7 +420,7 @@ ALTER TABLE `confirmation`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `idContact` tinyint(1) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idContact` tinyint(1) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `nonota`
