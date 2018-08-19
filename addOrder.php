@@ -2,6 +2,10 @@
     include "config/config.php";
     include "config/sessionUser.php";
 
+    //$json = array();
+    //$json['error'] = array();
+    //$json['']['']
+
     $id = $_SESSION['id'];
     $service = $_POST['service'];
     $price = $_POST['price'];
@@ -57,9 +61,11 @@
         $tmpTotal = array();
         $tmpCapital = array();
         $tmpSellingPrice = array();
+        $tmpMessage = array();
         //get data from trolli
         $sql = "SELECT trolli.idProduct,
                 trolli.total,
+                trolli.message,
                 product.capital,
                 product.sellingPrice
                 FROM trolli
@@ -69,31 +75,31 @@
         if ($stmt = $mysqli->prepare($sql)) {
             $stmt->bind_param("i", $id);
             if ($stmt->execute()) {
-                $stmt->bind_result($idProduct, $total, $capital, $sellingPrice);
+                $stmt->bind_result($idProduct, $total, $message, $capital, $sellingPrice);
                 
                 while ($stmt->fetch()) {
                     array_push($tmpIdProduk, $idProduct);
                     array_push($tmpTotal, $total);
                     array_push($tmpCapital, $capital);
                     array_push($tmpSellingPrice, $sellingPrice);
+                    array_push($tmpMessage, $message);
                 }
             }
             else{
                 $json .= ',"message":"'.$stmt->error.'"';
             }
+            $stmt->close();
         }
         else{
             $json .= ',"message":"'.$mysqli->error.'"';
         }
 
-        $stmt->close();
-
         //masukkan ke order
-        $sql = "INSERT INTO orderr (idProduct, idNota, total)
-                VALUES(?, ?, ?)";
+        $sql = "INSERT INTO orderr (idProduct, idNota, total, message)
+                VALUES(?, ?, ?, ?)";
         for ($i=0; $i < count($tmpIdProduk); $i++) {
             if ($stmt = $mysqli->prepare($sql)) {
-                $stmt->bind_param("iii", $tmpIdProduk[$i], $idNota, $tmpTotal[$i]);
+                $stmt->bind_param("iiis", $tmpIdProduk[$i], $idNota, $tmpTotal[$i], $tmpMessage[$i]);
                 if ($stmt->execute()) {
                     
                 }

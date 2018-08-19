@@ -5,22 +5,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
 <?php include "head.php"; ?>
+=======
+	<title>Toko Kamanda Shop</title>
+	<meta name="google-signin-scope" content="profile email"> 
+    <meta name="google-signin-client_id" content="571963356124-9nhkogpvo06cmqjnav3qh8cv3848n6na.apps.googleusercontent.com"> 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+	<?php
+		include 'head.php';
+	?>
+>>>>>>> 08646123d3a4bb092a5c8f0315aba3b37354431a
 </head>
-<script>
-	function menuProfilIn(){
-		document.getElementById('menuProfil').classList.add('in');
-		document.getElementById('menuProfil').classList.remove('out');
-	}
-	function menuProfilOut(){
-		document.getElementById('menuProfil').classList.remove('in');
-		document.getElementById('menuProfil').classList.add('out');
-	}
-</script>
 <body>
 
 <?php
   include 'header.php';
+  include 'menu.php';
 ?>
 
 <div class="isi">
@@ -72,14 +73,13 @@
 			if ($stmt->execute()) {
 				$stmt->bind_result($sqlStatus, $sqlIdConfirmation, $sqlBank, $sqlNumberAccount, $sqlAccountOwner);
 				?>
-				<table>
-					<tr>
-						<th>Bank</th>
-						<th>No. Rek</th>
-						<th>Nama Pemilik</th>
-						<th>Status</th>
-					</tr>
-				<?php
+				<table class="w3-table w3-striped">
+				<tr class="w3-cyan">
+					<th>Bank</th>
+					<th>No. Rek</th>
+					<th>Nama Pemilik</th>
+					<th>Status</th>
+				</tr><?php
 				while ($stmt->fetch()) {
 					?>
 					<tr>
@@ -108,7 +108,6 @@
 	}
 	else{
 ?>
-<center>
 	<form action="addConfirmation.php" method="post" enctype="multipart/form-data">
 		<p><?php echo "Id Nota : ".$banyakNota[0]; ?></p>
 		<input type="hidden" name="idNota" value="<?php echo $banyakNota[0]; ?>">
@@ -116,7 +115,7 @@
 		<input type="text" name="numberAccount" placeholder="Nomor Rekening" class="search" style="width: 400px; margin: 20px 0 40px -27px;"><br>
 		<input type="text" name="accountOwner" placeholder="Nama Pemilik Rekening" class="search" style="width: 400px; margin: 20px 0 40px -27px;"><br>
 		Upload bukti pembayaran : <input type="file" name="picture" style="margin-bottom: 40px;" accept="image/*"><br>
-		<input type="submit" value="Bayar" name="addSubmit" class="w3-btn w3-red" style="margin: 40px 0 0 -27px">
+		<input type="submit" value="Bayar" name="addSubmit" class="w3-btn w3-cyan" style="margin: 40px 0 0 -27px">
 	</form>
 </div>
 <?php

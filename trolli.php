@@ -5,12 +5,13 @@
     $idProduct = $_POST['idProduct'];
     $idAccount = $_POST['idAccount'];
     $stock = $_POST['stock'];
+    $message = htmlspecialchars($_POST['message']);
 
     $sql = "SELECT idEmail FROM account WHERE idEmail='$idAccount'";
     if($query = $mysqli->query($sql)){
         if ($query->num_rows == 1) {
-            $sql = "INSERT INTO trolli (idAccount, idProduct, total)
-                VALUES ('$idAccount', '$idProduct', '$stock')";
+            $sql = "INSERT INTO trolli (idAccount, idProduct, total, message)
+                VALUES ('$idAccount', '$idProduct', '$stock', '$message')";
             if ($query = $mysqli->query($sql)) {
                 echo '{"status":1,"message":""}';
             }

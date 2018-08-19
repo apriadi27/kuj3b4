@@ -14,7 +14,7 @@
 			while ($row = $query->fetch_assoc()) {
 				if($row['idCategory'] != 1){
 		?>		
-				<a href="#" style="width: 100%" class="w3-hover-cyan" onmouseover="kategoriColorWhite()" onmouseout="kategoriColorCyan()"><?php echo ucfirst($row['name']); ?></a>
+				<a href="category.php?id=<?php echo $row['idCategory']; ?>" style="width: 100%" class="w3-hover-cyan" onmouseover="kategoriColorWhite()" onmouseout="kategoriColorCyan()"><?php echo ucfirst($row['name']); ?></a>
 		<?php
 				}
 			}

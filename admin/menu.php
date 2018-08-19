@@ -10,5 +10,5 @@
     <div class="header w3-cyan">
    		<button class="menuButton w3-hover-white" onclick="openNav()"><i class="fas fa-bars fa-2x"></i></button>
         <p class="toko"><i>Toko Kamanda Shop</i></p>
-        <button class="menuButton w3-hover-white" style="position: fixed; right: 0;"><i class="fas fa-sign-out-alt fa-2x"></i></button> 
+        <a href="../"><button class="menuButton w3-hover-white" style="float: right; margin-right: -30px"><i class="fas fa-sign-out-alt fa-2x"></i></button></a>
     </div>

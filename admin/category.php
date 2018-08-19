@@ -13,16 +13,6 @@
             height: 50px;
         }
     </style>
-    <link rel="stylesheet" type="text/css" href="../style/all.css">
-    <script src="../js/all.js"></script>
-    <script>
-		function openNav(){
-			document.getElementById('sidenav').style.display="block";
-		}
-		function closeNav(){
-			document.getElementById('sidenav').style.display="none";
-		}
-    </script>
 </head>
 <body>
 <?php

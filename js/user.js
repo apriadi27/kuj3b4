@@ -1,11 +1,12 @@
 function submitTrolli() {
-    let input, request, idAccount, idProduct, stock;
+    let input, request, idAccount, idProduct, stock, message;
 
     idAccount = document.getElementById('idAccount').value;
     idProduct = document.getElementById('idProduct').value;
     stock = document.getElementById('trolliStock').value;
+    message = document.getElementById('message').value;
 
-    input = "idAccount=" + idAccount + "&idProduct=" + idProduct + "&stock=" + stock;
+    input = "idAccount=" + idAccount + "&idProduct=" + idProduct + "&stock=" + stock + "&message=" + message;
     request =  ajax(request);
     
     request.onreadystatechange = function() {
@@ -152,6 +153,7 @@ function addOrder() {
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     request.send(input);
 }
+
 function changeDestination() {
     let request, input;
     var city = document.getElementById('address').value;
@@ -196,4 +198,9 @@ function changeService() {
     var changeService = document.getElementById('service').value;
     var tmp = changeService.split(" Rp ");
     updateCost(tmp[1]);
+}
+
+function addContactForm() {
+    document.getElementById('contactAdd').style.display='block';
+    getProvince();
 }

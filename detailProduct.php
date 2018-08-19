@@ -19,7 +19,7 @@
     </script>
 </head>
 <body>
-<?php include "header.php"; ?>
+<?php include "header.php"; include 'menu.php'; ?>
 <div class="isi">
 <?php
     $tmpName;
@@ -77,14 +77,25 @@
                         <td>:</td>
                         <td><?php echo $price; ?></td>
                     </tr>
+                    <tr>
+                        <td>Jumlah Pesanan</td>
+                        <td>:</td>
+                        <td><input type="number" name="addStock" id="trolliStock"></td>
+                    </tr>
+                    <tr>
+                        <td>Pesan</td>
+                        <td>:</td>
+                        <td><textarea name="message" id="message" cols="20" rows="3"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><input type="submit" value="Masuk Trolli" onclick="submitTrolli()"></td>
+                    </tr>
                 </table>
                 <input type="hidden" name="idProduct" id="idProduct" value="<?php echo $idProduct; ?>">
                 <?php
                 if (isset($_SESSION['id'])) {
                     ?>
                     <input type="hidden" name="idAccount" id="idAccount" value="<?php echo $_SESSION['id']; ?>">
-                    <input type="number" name="addStock" id="trolliStock">
-                    <input type="submit" value="Trolli" onclick="submitTrolli()">
                     <?php
                 }
                 ?>
