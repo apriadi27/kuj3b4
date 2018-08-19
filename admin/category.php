@@ -9,26 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin - Kategori</title>
-    <script src="../js/ajax.js"></script>
     <script src="../js/category.js"></script>
-    <link rel="stylesheet" type="text/css" href="../style/w3.css">
-    <link rel="stylesheet" type="text/css" href="../style/css.css">
+    <?php 
+        include 'head.php';
+    ?>
     <style>
         .icon{
             width: 50px;
             height: 50px;
         }
     </style>
-    <link rel="stylesheet" type="text/css" href="../style/all.css">
-    <script src="../js/all.js"></script>
-    <script>
-		function openNav(){
-			document.getElementById('sidenav').style.display="block";
-		}
-		function closeNav(){
-			document.getElementById('sidenav').style.display="none";
-		}
-    </script>
 </head>
 <body>
 <?php

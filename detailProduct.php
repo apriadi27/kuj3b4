@@ -8,24 +8,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="../style/w3.css">
-    <link rel="stylesheet" type="text/css" href="../style/css.css">
-    <title>Silahkan Belanja</title>
-    <script src="js/ajax.js"></script>
-    <script src="js/user.js"></script>
-    <script>
-    function menuProfilIn(){
-            document.getElementById('menuProfil').classList.add('in');
-            document.getElementById('menuProfil').classList.remove('out');
-        }
-        function menuProfilOut(){
-            document.getElementById('menuProfil').classList.remove('in');
-            document.getElementById('menuProfil').classList.add('out');
-        }
-    </script>
+    <title>Toko Kamanda Shop</title>
+    <?php
+        include 'head.php';
+    ?> 
 </head>
 <body>
-<?php include "header.php"; ?>
+<?php include "header.php"; include 'menu.php'; ?>
 <div class="isi">
 <?php
     $tmpName;
@@ -83,14 +72,25 @@
                         <td>:</td>
                         <td><?php echo $price; ?></td>
                     </tr>
+                    <tr>
+                        <td>Jumlah Pesanan</td>
+                        <td>:</td>
+                        <td><input type="number" name="addStock" id="trolliStock"></td>
+                    </tr>
+                    <tr>
+                        <td>Pesan</td>
+                        <td>:</td>
+                        <td><textarea name="message" id="message" cols="20" rows="3"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><input type="submit" value="Masuk Trolli" onclick="submitTrolli()"></td>
+                    </tr>
                 </table>
                 <input type="hidden" name="idProduct" id="idProduct" value="<?php echo $idProduct; ?>">
                 <?php
                 if (isset($_SESSION['id'])) {
                     ?>
                     <input type="hidden" name="idAccount" id="idAccount" value="<?php echo $_SESSION['id']; ?>">
-                    <input type="number" name="addStock" id="trolliStock">
-                    <input type="submit" value="Trolli" onclick="submitTrolli()">
                     <?php
                 }
                 ?>

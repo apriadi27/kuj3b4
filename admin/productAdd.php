@@ -88,6 +88,9 @@
             $instagram->UploadPhoto($_SERVER['DOCUMENT_ROOT']."/productPicture/".$newImageName, $description);
             header("Location: product.php");    
             }
+            else{
+                header("Location: product.php?message=Akun instagram belum ada");
+            }
         }
     }
 ?>

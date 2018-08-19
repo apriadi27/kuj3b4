@@ -1,5 +1,5 @@
 function categoryDelete(id, name) {
-    var ask = confirm("Apakah anda yaking menghapus " + name);
+    var ask = confirm("Apakah anda yakin menghapus " + name);
     if (ask) {
         let request, input;
         input = 'id=' + id;
