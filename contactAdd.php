@@ -18,6 +18,7 @@
             header("Location: kontak.php?message=".$mysqli->error);
         }
     }
-    header("Location:kontak.php");
-    
+    else{
+        header("Location:kontak.php");
+    }
 ?>

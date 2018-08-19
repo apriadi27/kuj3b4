@@ -14,10 +14,10 @@
     <link rel="stylesheet" type="text/css" href="../style/w3.css">
     <link rel="stylesheet" type="text/css" href="../style/css.css">
     <title>Admin - Akun</title>
+    <script src="../js/ajax.js"></script>
     <script src="../js/sosmed.js"></script>
-    <?php
-        include 'head.php';
-    ?>
+    <link rel="stylesheet" type="text/css" href="../style/w3.css">
+    <link rel="stylesheet" type="text/css" href="../style/css.css">
 </head>
 <body>
 <?php
@@ -26,7 +26,7 @@
 
 <div class="w3-modal" style="display: none;" id="sosmedAdd">
     <form action="sosmedAdd.php" method="post" style="margin: 50px 500px; background-color: white; padding: 30px;">
-        <button class="cancel w3-btn w3-cyan" onclick="document.getElementById('sosmedAdd').style.display='none'">X</button>
+        <button class="cancel w3-btn w3-blue" onclick="document.getElementById('sosmedAdd').style.display='none'">X</button>
         <center><input type="text" name="addUser" requiblue class="search" placeholder="Masukkan Username" style="margin: 0 0 20px;" autofocus><br>
         <input type="password" name="addPass" id="addPass1" requiblue class="search" placeholder="Masukkan Password" style="margin: 0 0 20px;" oninput="confirmAddPass()"><br>
         <input type="password" id="addPass2" requiblue class="search" placeholder="Konfirmasi Password" style="margin: 0 0 20px;" oninput="confirmAddPass()">
@@ -37,13 +37,13 @@
             <option value="Instagram">Instagram</option>
             <option value="Google+">Google+ </option>
         </select><br>
-        <input type="submit" value="Submit" name="addSubmit" onclick="document.getElementById('sosmedAdd').style.display='none'" class="w3-btn w3-cyan" style="margin-top: 20px;"></center>
+        <input type="submit" value="Submit" name="addSubmit" onclick="document.getElementById('sosmedAdd').style.display='none'" class="w3-btn w3-blue" style="margin-top: 20px;"></center>
     </form>
 </div>
 
 <div class="w3-modal" style="display: none;" id="sosmedEdit">
     <form action="sosmedEdit.php" method="post" style="margin: 50px 500px; background-color: white; padding: 30px;">
-        <button class="cancel w3-btn w3-cyan" onclick="document.getElementById('sosmedEdit').style.display='none'">X</button>
+        <button class="cancel w3-btn w3-blue" onclick="document.getElementById('sosmedEdit').style.display='none'">X</button>
         <center><label id="labelEditUser"></label><br>
         <input type="hidden" name="editIdSosmed" id="editIdSosmed">
         <input type="password" id="editOldPass" requiblue class="search" placeholder="Masukkan Password Lama" style="margin: 0 0 20px;" onchange="checkPass()">
@@ -54,14 +54,14 @@
         <label id="labelEditPass"></label>
         <br>
         <input type="hidden" name="editTypeSosmed" requiblue class="search" placeholder="Jenis Akun" style="margin: 0 0 0px;"><br>
-        <input type="submit" value="Submit" disabled id="editSubmit" name="editSubmit" onclick="document.getElementById('sosmedEdit').style.display='none'" class="w3-btn w3-cyan" style="margin: 0 0 20px 0;"></center>
+        <input type="submit" value="Submit" disabled id="editSubmit" name="editSubmit" onclick="document.getElementById('sosmedEdit').style.display='none'" class="w3-btn w3-blue" style="margin: 0 0 20px 0;"></center>
     </form>
 </div>
 
 <div class="isi" style="margin: 0 200px;">
-  <button class="w3-btn w3-cyan" onclick="document.getElementById('sosmedAdd').style.display='block'" style="margin-bottom: 20px">Tambah Akun</button>
+  <button class="w3-btn w3-blue" onclick="document.getElementById('sosmedAdd').style.display='block'" style="margin-bottom: 20px">Tambah Akun</button>
   <table class="w3-table w3-hoverable w3-striped">
-    <tr class="w3-cyan">
+    <tr class="w3-blue">
       <td>ID</td>
       <td>Jenis</td>
       <td colspan="2"><center>Option</center></td>

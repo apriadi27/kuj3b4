@@ -9,6 +9,14 @@
 	font-family: Monotype Corsiva;
 	font-size: 25px;
 }
+.profil{
+	border-radius: 100%;
+	width: 30px;
+	height: 30px;
+	float: right;
+	margin: -15px 20px;
+	cursor: pointer;
+}
 .menuButton{
 	text-decoration: none;
 	border: none;

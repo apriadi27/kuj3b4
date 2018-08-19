@@ -10,7 +10,7 @@
         //encrypt password
         $pass = base64_encode($pass);
         $sql = "UPDATE sosmed SET
-                pass=?,
+                pass=?
                 WHERE idSosmed=?";
         if ($stmt = $mysqli->prepare($sql)) {
             $stmt->bind_param("si", $pass, $id);
@@ -22,7 +22,7 @@
             }
         }
         else{
-            header("Location: sosmed.php?message=Gagal menyiapkan sql");
+            header("Location: sosmed.php?message=".$mysqli->error);
         }
     }
     else {

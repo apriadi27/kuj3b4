@@ -5,14 +5,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin - Konfirmasi Pembayaran</title>
+<?php include "head.php"; ?>
     <script src="../js/payment.js"></script>
-    <?php
-        include 'head.php';
-    ?>
     <style>
         .icon{
             width: 50px;
@@ -42,7 +36,11 @@
             $stmt->bind_result($sqlIdConfirmation, $sqlStatus, $sqlIdNota, $sqlDate, $sqlBank, $sqlNumerAccount, $sqlAccountOwner);
             ?>
             <table class="w3-table w3-striped w3-bordered" style="margin-top: 20px;">
+<<<<<<< HEAD
+            <tr class="w3-blue">
+=======
             <tr class="w3-cyan">
+>>>>>>> 08646123d3a4bb092a5c8f0315aba3b37354431a
                 <th>Id Nota</th>
                 <th>Tanggal</th>
                 <th>Nama Bank</th>
@@ -62,7 +60,11 @@
                 <td><?php echo $sqlNumerAccount; ?></td>
                 <td><?php echo $sqlAccountOwner; ?></td>
                 <td><?php echo "Lunas"; ?></td>
+<<<<<<< HEAD
+                <td><a href="paymentDetail.php?confirmation=<?php echo $sqlIdConfirmation; ?>"><button class="w3-btn w3-blue">Detail</button></a></td>
+=======
                 <td><a href="paymentDetail.php?confirmation=<?php echo $sqlIdConfirmation; ?>"><button class="w3-btn w3-cyan">Detail</button></a></td>
+>>>>>>> 08646123d3a4bb092a5c8f0315aba3b37354431a
             </tr>
             <?php
                 }
@@ -75,7 +77,11 @@
                 <td><?php echo $sqlNumerAccount; ?></td>
                 <td><?php echo $sqlAccountOwner; ?></td>
                 <td><?php echo "Belum Lunas"; ?></td>
+<<<<<<< HEAD
+                <td><a href="paymentDetail.php?confirmation=<?php echo $sqlIdConfirmation; ?>"><button class="w3-btn w3-blue">Detail</button></a></td>
+=======
                 <td><a href="paymentDetail.php?confirmation=<?php echo $sqlIdConfirmation; ?>"><button class="w3-btn w3-cyan">Detail</button></a></td>
+>>>>>>> 08646123d3a4bb092a5c8f0315aba3b37354431a
             </tr>
             <?php
                 }

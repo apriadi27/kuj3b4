@@ -5,14 +5,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Konfirmasi Pembayaran</title>
+   <?php include "head.php"; ?>
     <script src="../js/payment.js"></script>
-    <?php
-        include 'head.php';
-    ?>
 </head>
 <body>
 <?php
@@ -53,7 +47,11 @@
                 $sqlTanggalNota, $sqlService, $sqlOngkir, $sqlStatus);
             ?> 
             <table class="w3-table w3-bordered">
+<<<<<<< HEAD
+                <tr class="w3-blue">
+=======
                 <tr class="w3-cyan">
+>>>>>>> 08646123d3a4bb092a5c8f0315aba3b37354431a
                     <th style="width: 400px"><center>Bukti Pembayaran</center></th>
                     <th colspan="3"><center>Detail<center></th>
                 </tr>
@@ -145,7 +143,11 @@
             ?>
             <center><p style="font-size: 18px; margin: 60px 0 20px">Produk yang dipesan</p></center>
             <table class="w3-table w3-bordered">
+<<<<<<< HEAD
+                <tr class="w3-blue">
+=======
                 <tr class="w3-cyan">
+>>>>>>> 08646123d3a4bb092a5c8f0315aba3b37354431a
                     <th style="width: 400px"><center>Gambar Produk</center></th>
                     <th colspan="3"><center>Detail Produk</center</th>
                 </tr>
@@ -153,7 +155,11 @@
             while ($stmt->fetch()) {
                 ?>
                 <tr>
+<<<<<<< HEAD
+                    <td rowspan="6"><img src="<?php echo "../productPicture/".$sqlPicture ?>" alt="Gambar Produk" srcset="" class="buktiPembayaran"></td>
+=======
                     <td rowspan="6"><img src="<?php echo "../productPicture/".$sqlPicture ?>" class="buktiPembayaran" alt="Gambar Produk" srcset=""></td>
+>>>>>>> 08646123d3a4bb092a5c8f0315aba3b37354431a
                     <td style="padding-left: 17px; width: 200px">Nama Produk</td>
                     <td>:</td>
                     <td><?php echo $sqlProduct; ?></td>
@@ -198,7 +204,11 @@
 
     if ($status != 1) {
 ?>
+<<<<<<< HEAD
+<button onclick="updateNota(<?php echo $idNota; ?>)" class="w3-btn w3-blue" style="margin-top: 40px">Terima</button>
+=======
 <button onclick="updateNota(<?php echo $idNota; ?>)" class="w3-btn w3-cyan" style="margin-top: 40px">Terima</button>
+>>>>>>> 08646123d3a4bb092a5c8f0315aba3b37354431a
 <?php
     }
 ?>
